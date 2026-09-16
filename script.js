@@ -21,3 +21,13 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+// Page Loader Logic
+window.addEventListener('load', () => {
+    const loader = document.getElementById('page-loader');
+    if (loader) {
+        setTimeout(() => {
+            loader.classList.add('hidden');
+        }, 300); // 300ms delay for premium feel
+    }
+});
