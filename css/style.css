@@ -787,3 +787,53 @@ a {
         gap: 0.5rem;
     }
 }
+
+/* ==========================================================================
+   Under Development (Portfolio) Styles
+   ========================================================================== */
+.dev-container {
+    text-align: center;
+    max-width: 600px;
+    padding: 4rem 2rem;
+    background: #f8fafc;
+    border: 1px dashed #cbd5e1;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+}
+
+.dev-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.dev-title {
+    color: var(--bg-blue);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.dev-text {
+    color: #4a5568;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.btn-back {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background-color: var(--header-blue);
+    color: var(--accent-gold);
+    font-weight: 700;
+    font-size: 0.9rem;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: var(--transition-fast);
+}
+
+.btn-back:hover {
+    background-color: var(--accent-gold);
+    color: var(--header-blue);
+}
