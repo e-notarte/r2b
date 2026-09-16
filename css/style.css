@@ -4,10 +4,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
 
 :root {
-    /* Updated Corporate Blue & Gold Theme based on image_bd86e8.png */
-    --bg-blue: #203250;
-    --header-blue: #16243b;
-    /* Slightly darker shade of the blue for the navbar */
+    /* Updated Corporate Blue & Gold Theme */
+    --bg-blue: #1C4587;
+    --header-blue: #1C4587;
+    /* Main blue color for the brand */
     --accent-gold: #fcb017;
     /* Brightest gold from the color bar */
     --accent-gold-hover: #da9528;
@@ -59,7 +59,14 @@ a {
     justify-content: space-between;
     align-items: center;
     padding: 1.5rem 5%;
+    background-color: transparent;
+    border-bottom: 3px solid transparent;
+    transition: all 0.4s ease;
+}
+
+.navbar.scrolled {
     background-color: var(--header-blue);
+    padding: 1rem 5%;
     border-bottom: 3px solid var(--accent-gold);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
