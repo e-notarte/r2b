@@ -696,3 +696,94 @@ a {
         padding-right: 0;
     }
 }
+
+/* ==========================================================================
+   Careers Page Styles
+   ========================================================================== */
+.job-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.job-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-left: 4px solid var(--accent-gold);
+    border-radius: 6px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.03);
+    transition: var(--transition-fast);
+}
+
+.job-card:hover {
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
+}
+
+.job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.job-title {
+    color: var(--bg-blue);
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.job-type {
+    background-color: var(--header-blue);
+    color: var(--accent-gold);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.job-meta {
+    color: #718096;
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.job-desc {
+    color: #4a5568;
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+
+.btn-apply {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: transparent;
+    color: var(--bg-blue);
+    font-weight: 700;
+    font-size: 0.9rem;
+    border: 2px solid var(--bg-blue);
+    border-radius: 4px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: var(--transition-fast);
+}
+
+.btn-apply:hover {
+    background-color: var(--bg-blue);
+    color: var(--text-light);
+}
+
+/* Ensure job header stacks on very small screens */
+@media (max-width: 500px) {
+    .job-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+}
