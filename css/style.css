@@ -808,53 +808,68 @@ a {
 }
 
 /* ==========================================================================
-   Under Development (Portfolio) Styles
+   Portfolio Gallery Styles
    ========================================================================== */
-.dev-container {
-    text-align: center;
-    max-width: 600px;
+.portfolio-section {
     padding: 4rem 2rem;
-    background: #f8fafc;
-    border: 1px dashed #cbd5e1;
+    background-color: #f8fafc;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.portfolio-item {
+    position: relative;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    aspect-ratio: 4 / 3;
+    cursor: pointer;
 }
 
-.dev-icon {
-    font-size: 4rem;
-    margin-bottom: 1rem;
+.portfolio-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
 }
 
-.dev-title {
-    color: var(--bg-blue);
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    font-weight: 700;
+.portfolio-item:hover img {
+    transform: scale(1.1);
 }
 
-.dev-text {
-    color: #4a5568;
-    font-size: 1.1rem;
-    line-height: 1.6;
-    margin-bottom: 2rem;
+.portfolio-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(32, 50, 80, 0.9), rgba(32, 50, 80, 0.2));
+    display: flex;
+    align-items: flex-end;
+    padding: 1.5rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
-.btn-back {
-    display: inline-block;
-    padding: 0.8rem 1.5rem;
-    background-color: var(--header-blue);
+.portfolio-item:hover .portfolio-overlay {
+    opacity: 1;
+}
+
+.portfolio-title {
     color: var(--accent-gold);
+    font-size: 1.2rem;
     font-weight: 700;
-    font-size: 0.9rem;
-    border-radius: 4px;
     text-transform: uppercase;
     letter-spacing: 1px;
-    transition: var(--transition-fast);
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
 }
 
-.btn-back:hover {
-    background-color: var(--accent-gold);
-    color: var(--header-blue);
+.portfolio-item:hover .portfolio-title {
+    transform: translateY(0);
 }
 
 /* ==========================================================================
