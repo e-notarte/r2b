@@ -233,8 +233,27 @@ a {
         right: -100%;
         width: 100%;
         height: 100vh;
-        background: var(--header-blue);
+        background: rgba(22, 36, 59, 0.90);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
         flex-direction: column;
+    }
+
+    .nav-links::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        height: 100%;
+        transform: translate(-50%, -50%);
+        background-image: url('../images/RII_Logo.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 80%;
+        opacity: 0.1;
+        z-index: -1;
+        pointer-events: none;
         justify-content: center;
         align-items: center;
         transition: right 0.4s ease;
@@ -836,4 +855,37 @@ a {
 .btn-back:hover {
     background-color: var(--accent-gold);
     color: var(--header-blue);
+}
+
+/* ==========================================================================
+   Page Loader
+   ========================================================================== */
+.page-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.page-loader.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loader-logo {
+    width: 150px;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 0.7; }
+    50% { transform: scale(1.1); opacity: 1; }
+    100% { transform: scale(1); opacity: 0.7; }
 }
