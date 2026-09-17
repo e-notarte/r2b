@@ -4,299 +4,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
 
 :root {
-    /* Updated Corporate Blue & Gold Theme */
-    --bg-blue: #1C4587;
-    --header-blue: #1C4587;
-    /* Main blue color for the brand */
-    --accent-gold: #fcb017;
-    /* Brightest gold from the color bar */
-    --accent-gold-hover: #da9528;
-    /* Mid-gold from the color bar */
-    --text-light: #ffffff;
-    --text-muted: #a0aec0;
-
-    --font-main: 'Montserrat', sans-serif;
-    --transition-fast: 0.2s ease-in-out;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-img {
-    max-width: 100%;
-    display: block;
-}
-
-body {
-    font-family: var(--font-main);
-    color: var(--text-light);
-    background-color: var(--bg-blue);
-    line-height: 1.6;
-    overflow-x: hidden;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-/* ==========================================================================
-   Navigation
-   ========================================================================== */
-.navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.5rem 5%;
-    background-color: transparent;
-    border-bottom: 3px solid transparent;
-    transition: all 0.4s ease;
-}
-
-.navbar.scrolled {
-    background-color: var(--header-blue);
-    padding: 1rem 5%;
-    border-bottom: 3px solid var(--accent-gold);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-.nav-brand {
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: var(--accent-gold);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.nav-brand img {
-    max-height: 55px;
-    width: auto;
-    display: block;
-}
-
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 2.5rem;
-    align-items: center;
-}
-
-.nav-links a {
-    font-size: 0.9rem;
-    font-weight: 600;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    transition: var(--transition-fast);
-    position: relative;
-    color: var(--text-light);
-}
-
-.nav-links a::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background-color: var(--accent-gold);
-    transition: var(--transition-fast);
-}
-
-.nav-links a:hover::after,
-.nav-links a.active::after {
-    width: 100%;
-}
-
-.nav-links a:hover,
-.nav-links a.active {
-    color: var(--accent-gold-hover);
-}
-
-/* Mobile Nav Toggle */
-.nav-toggle {
-    display: none;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0.5rem;
-    z-index: 1001;
-}
-
-.hamburger {
-    display: block;
-    width: 25px;
-    height: 2px;
-    background-color: var(--accent-gold);
-    position: relative;
-    transition: var(--transition-fast);
-}
-
-.hamburger::before,
-.hamburger::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: inherit;
-    left: 0;
-    transition: var(--transition-fast);
-}
-
-.hamburger::before {
-    top: -8px;
-}
-
-.hamburger::after {
-    top: 8px;
-}
-
-/* ==========================================================================
-   Hero Section
-   ========================================================================== */
-.hero {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 150px 20px 80px;
-    /* Changed from var(--bg-blue) to white */
-    background-color: #ffffff;
-}
-
-.hero-content {
-    max-width: 800px;
-    animation: fadeInUp 1s ease forwards;
-}
-
-.hero-title {
-    color: var(--accent-gold);
-    font-size: clamp(2.5rem, 6vw, 4.5rem);
-    font-weight: 700;
-    margin-bottom: 1.5rem;
-    letter-spacing: 2px;
-    line-height: 1.2;
-}
-
-.hero-text {
-    font-size: clamp(1rem, 2vw, 1.2rem);
-    font-weight: 300;
-    line-height: 1.8;
-    /* Changed from rgba(255, 255, 255, 0.9) to dark gray for contrast */
-    color: #333333;
-    margin: 0 auto;
-}
-
-/* ==========================================================================
-   Footer
-   ========================================================================== */
-.simple-footer {
-    text-align: center;
-    padding: 2rem;
-    background-color: var(--header-blue);
-    border-top: 1px solid rgba(252, 176, 23, 0.2);
-    /* Subtle gold border using new hex */
-    margin-top: auto;
-}
-
-.footer-text {
-    margin: 0;
-    font-size: 0.9rem;
-    color: var(--text-muted);
-}
-
-/* ==========================================================================
-   Animations
-   ========================================================================== */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* ==========================================================================
-   Responsive Design
-   ========================================================================== */
-@media (max-width: 768px) {
-    .nav-toggle {
-        display: block;
-    }
-
-    .nav-links {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 100%;
-        height: 100vh;
-        background: rgba(22, 36, 59, 0.90);
-        backdrop-filter: blur(8px);
-        -webkit-backdrop-filter: blur(8px);
-        flex-direction: column;
-    }
-
-    .nav-links::before {
-        content: '';
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 100%;
-        height: 100%;
-        transform: translate(-50%, -50%);
-        background-image: url('../images/RII_Logo.png');
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: 80%;
-        opacity: 0.1;
-        z-index: -1;
-        pointer-events: none;
-        justify-content: center;
-        align-items: center;
-        transition: right 0.4s ease;
-        gap: 3rem;
-    }
-
-    .nav-links.active {
-        right: 0;
-    }
-
-    .nav-toggle.active .hamburger {
-        background: transparent;
-    }
-
-    .nav-toggle.active .hamburger::before {
-        top: 0;
-        transform: rotate(45deg);
-    }
-
-    .nav-toggle.active .hamburger::after {
-        top: 0;
-        transform: rotate(-45deg);
-    }
-}
-
-/* ==========================================================================
-   CSS Reset & Variables (R-II Builders Theme)
-   ========================================================================== */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
-
-:root {
     /* Updated Corporate Blue & Gold Theme based on image_bd86e8.png */
     --bg-blue: #203250;
     --header-blue: #16243b;
@@ -320,8 +27,8 @@ a {
 
 body {
     font-family: var(--font-main);
-    color: var(--text-light);
-    background-color: var(--bg-blue);
+    color: #333333;
+    background-color: #ffffff;
     line-height: 1.6;
     overflow-x: hidden;
     display: flex;
@@ -347,9 +54,9 @@ a {
     justify-content: space-between;
     align-items: center;
     padding: 1.5rem 5%;
-    background-color: var(--header-blue);
+    background-color: #ffffff;
     border-bottom: 3px solid var(--accent-gold);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 
 .nav-brand {
@@ -380,7 +87,7 @@ a {
     text-transform: uppercase;
     transition: var(--transition-fast);
     position: relative;
-    color: var(--text-light);
+    color: var(--bg-blue);
 }
 
 .nav-links a::after {
@@ -488,8 +195,8 @@ a {
 .page-hero {
     padding: 160px 20px 60px;
     /* Accounts for fixed navbar */
-    background-color: var(--header-blue);
-    /* Dark blue top section */
+    background-color: #f8fafc;
+    /* Light grey top section */
     text-align: center;
 }
 
@@ -502,7 +209,7 @@ a {
 }
 
 .hero-subtitle {
-    color: var(--text-light);
+    color: #4a5568;
     font-size: clamp(1rem, 2vw, 1.5rem);
     font-weight: 300;
     letter-spacing: 1px;
@@ -565,16 +272,16 @@ a {
 .simple-footer {
     text-align: center;
     padding: 2rem;
-    background-color: var(--header-blue);
-    border-top: 1px solid rgba(252, 176, 23, 0.2);
-    /* Subtle gold border using new hex */
+    background-color: #f8fafc;
+    border-top: 1px solid #e2e8f0;
+    /* Subtle border */
     margin-top: auto;
 }
 
 .footer-text {
     margin: 0;
     font-size: 0.9rem;
-    color: var(--text-muted);
+    color: #4a5568;
 }
 
 /* ==========================================================================
@@ -606,7 +313,7 @@ a {
         right: -100%;
         width: 100%;
         height: 100vh;
-        background: var(--header-blue);
+        background: #ffffff;
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -900,7 +607,7 @@ a {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: var(--bg-blue);
+    background-color: #ffffff;
     display: flex;
     justify-content: center;
     align-items: center;
