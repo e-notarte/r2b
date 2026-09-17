@@ -193,11 +193,76 @@ a {
    Internal Pages (About, Portfolio, etc.)
    ========================================================================== */
 .page-hero {
+    position: relative;
     padding: 160px 20px 60px;
     /* Accounts for fixed navbar */
     background-color: #f8fafc;
     /* Light grey top section */
     text-align: center;
+    overflow: hidden;
+}
+
+/* About Page Hero Slider */
+#about-hero {
+    color: #ffffff;
+}
+
+#about-hero .hero-subtitle {
+    color: #ffffff;
+}
+
+#about-hero .hero-content {
+    position: relative;
+    z-index: 2;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+#about-hero .hero-title {
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero-slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.hero-slider .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    animation: slideFade 15s infinite;
+}
+
+.hero-slider .slide:nth-child(1) { animation-delay: 0s; }
+.hero-slider .slide:nth-child(2) { animation-delay: 5s; }
+.hero-slider .slide:nth-child(3) { animation-delay: 10s; }
+
+@keyframes slideFade {
+    0% { opacity: 0; }
+    5% { opacity: 1; }
+    33% { opacity: 1; }
+    38% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+.hero-slider::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(22, 36, 59, 0.7), rgba(22, 36, 59, 0.9));
+    z-index: 1;
 }
 
 .page-hero .hero-title {
