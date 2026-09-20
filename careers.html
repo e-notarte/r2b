@@ -87,70 +87,85 @@
                 <p>If you are ready to take your career to the next level, explore our open positions below.</p>
             </div>
 
-            <div class="text-block">
-                <h2 class="section-title">Openings for Technical Employees</h2>
+            <div class="category-grid">
+                <div class="category-box active" onclick="showCategory('technical')">
+                    <h3>Technical Employees</h3>
+                    <p>Project Managers, Engineers, Admins</p>
+                </div>
+                <div class="category-box" onclick="showCategory('skilled')">
+                    <h3>Skilled Workers</h3>
+                    <p>Equipment Operators, Foremen, Laborers</p>
+                </div>
             </div>
 
-            <!-- Job Listings (Technical) -->
-            <div class="job-list">
-
-                <!-- Job Card 1 -->
-                <div class="job-card">
-                    <div class="job-header">
-                        <h3 class="job-title">Project Manager</h3>
-                        <span class="job-type">Full-Time</span>
-                    </div>
-                    <div class="job-meta">Quezon City / Project Site</div>
-                    <p class="job-desc">
-                        We are looking for an experienced Project Manager to oversee our upcoming infrastructure
-                        projects. The ideal candidate will be responsible for planning, executing, and closing
-                        construction projects, ensuring they are completed on time, within budget, and up to our
-                        Quadruple A standards.
-                    </p>
-                    <a href="mailto:hr@riibuilders.com?subject=Application%20for%20Project%20Manager"
-                        class="btn-apply">Apply via Email</a>
+            <div id="technical-jobs" class="job-category-section">
+                <div class="text-block">
+                    <h2 class="section-title">Openings for Technical Employees</h2>
                 </div>
 
-                <!-- Job Card 2 -->
-                <div class="job-card">
-                    <div class="job-header">
-                        <h3 class="job-title">Project Admin</h3>
-                        <span class="job-type">Full-Time</span>
-                    </div>
-                    <div class="job-meta">Quezon City / Project Site</div>
-                    <p class="job-desc">
-                        The Project Admin will support the project management team with critical administrative tasks.
-                        Responsibilities include document control, daily reporting, scheduling, and facilitating
-                        communication between the site team, stakeholders, and the head office.
-                    </p>
-                    <a href="mailto:hr@riibuilders.com?subject=Application%20for%20Project%20Admin"
-                        class="btn-apply">Apply via Email</a>
-                </div>
+                <!-- Job Listings (Technical) -->
+                <div class="job-list">
 
+                    <!-- Job Card 1 -->
+                    <div class="job-card">
+                        <div class="job-header">
+                            <h3 class="job-title">Project Manager</h3>
+                            <span class="job-type">Full-Time</span>
+                        </div>
+                        <div class="job-meta">Quezon City / Project Site</div>
+                        <p class="job-desc">
+                            We are looking for an experienced Project Manager to oversee our upcoming infrastructure
+                            projects. The ideal candidate will be responsible for planning, executing, and closing
+                            construction projects, ensuring they are completed on time, within budget, and up to our
+                            Quadruple A standards.
+                        </p>
+                        <a href="mailto:hr@riibuilders.com?subject=Application%20for%20Project%20Manager"
+                            class="btn-apply">Apply via Email</a>
+                    </div>
+
+                    <!-- Job Card 2 -->
+                    <div class="job-card">
+                        <div class="job-header">
+                            <h3 class="job-title">Project Admin</h3>
+                            <span class="job-type">Full-Time</span>
+                        </div>
+                        <div class="job-meta">Quezon City / Project Site</div>
+                        <p class="job-desc">
+                            The Project Admin will support the project management team with critical administrative tasks.
+                            Responsibilities include document control, daily reporting, scheduling, and facilitating
+                            communication between the site team, stakeholders, and the head office.
+                        </p>
+                        <a href="mailto:hr@riibuilders.com?subject=Application%20for%20Project%20Admin"
+                            class="btn-apply">Apply via Email</a>
+                    </div>
+
+                </div>
             </div>
 
             <!-- Skilled Workers Section -->
-            <div class="text-block" style="margin-top: 4rem;">
-                <h2 class="section-title">Openings for Skilled Workers</h2>
-            </div>
-            
-            <!-- Job Listings (Skilled Workers) -->
-            <div class="job-list">
-                
-                <!-- Job Card 3 (Example) -->
-                <div class="job-card">
-                    <div class="job-header">
-                        <h3 class="job-title">Heavy Equipment Operator</h3>
-                        <span class="job-type">Project-Based</span>
-                    </div>
-                    <div class="job-meta">Various Project Sites</div>
-                    <p class="job-desc">
-                        We are currently looking for experienced and certified Heavy Equipment Operators for our ongoing infrastructure projects. Candidates must have valid certification and a strong commitment to workplace safety.
-                    </p>
-                    <a href="mailto:hr@riibuilders.com?subject=Application%20for%20Skilled%20Worker"
-                        class="btn-apply">Apply via Email</a>
+            <div id="skilled-jobs" class="job-category-section" style="display: none;">
+                <div class="text-block">
+                    <h2 class="section-title">Openings for Skilled Workers</h2>
                 </div>
+                
+                <!-- Job Listings (Skilled Workers) -->
+                <div class="job-list">
+                    
+                    <!-- Job Card 3 (Example) -->
+                    <div class="job-card">
+                        <div class="job-header">
+                            <h3 class="job-title">Heavy Equipment Operator</h3>
+                            <span class="job-type">Project-Based</span>
+                        </div>
+                        <div class="job-meta">Various Project Sites</div>
+                        <p class="job-desc">
+                            We are currently looking for experienced and certified Heavy Equipment Operators for our ongoing infrastructure projects. Candidates must have valid certification and a strong commitment to workplace safety.
+                        </p>
+                        <a href="mailto:hr@riibuilders.com?subject=Application%20for%20Skilled%20Worker"
+                            class="btn-apply">Apply via Email</a>
+                    </div>
 
+                </div>
             </div>
 
             <div class="text-block"
@@ -192,6 +207,24 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        function showCategory(categoryId) {
+            // Hide all category sections
+            document.querySelectorAll('.job-category-section').forEach(el => {
+                el.style.display = 'none';
+            });
+            // Remove active state from all boxes
+            document.querySelectorAll('.category-box').forEach(el => {
+                el.classList.remove('active');
+            });
+            
+            // Show the selected section
+            document.getElementById(categoryId + '-jobs').style.display = 'block';
+            
+            // Set active state on the clicked box
+            event.currentTarget.classList.add('active');
+        }
+    </script>
 </body>
 
 </html>
