@@ -77,7 +77,8 @@ a {
 
 .brand-text {
     font-size: 1.1rem;
-    color: #1a4a84; /* Distinct corporate blue */
+    color: #1a4a84;
+    /* Distinct corporate blue */
     white-space: nowrap;
 }
 
