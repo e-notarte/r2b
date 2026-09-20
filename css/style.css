@@ -888,3 +888,42 @@ a {
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
     letter-spacing: 1px;
 }
+
+/* ==========================================================================
+   Careers Hero - 3/4 Screen Background
+   ========================================================================== */
+#careers-hero {
+    position: relative;
+    height: 75vh;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+    overflow: hidden;
+    /* Uses a background image with a dark overlay to keep text readable */
+    background-image: linear-gradient(rgba(22, 36, 59, 0.75), rgba(22, 36, 59, 0.9)), url('https://pub-7480e3de787c46bc820e8f515126787b.r2.dev/RII%20Photos/R2%20OLD%20PHOTOS/Capture3.JPG.webp');
+    background-size: cover;
+    background-position: center;
+}
+
+#careers-hero .hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+#careers-hero .hero-title {
+    color: var(--accent-gold);
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-bottom: 0.5rem;
+}
+
+#careers-hero .hero-subtitle {
+    color: #ffffff;
+    font-size: clamp(1.2rem, 2vw, 1.8rem);
+    font-weight: 300;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    letter-spacing: 1px;
+}
