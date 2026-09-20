@@ -383,7 +383,7 @@ a {
 }
 
 /* ==========================================================================
-   Footer (Updated Horizontal Layout)
+   Footer (Left / Center / Right Layout)
    ========================================================================== */
 .simple-footer {
     padding: 2rem 5%;
@@ -394,37 +394,40 @@ a {
 
 .footer-bottom-bar {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
-    gap: 1.5rem;
+    width: 100%;
     max-width: 1400px;
     margin: 0 auto;
 }
 
-/* Left Section: Social */
-.footer-social {
-    text-align: center;
+/* Left Section: Socials */
+.footer-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /* Aligns content to the left */
 }
 
-.footer-social span {
-    display: block;
+.social-text {
     color: #4a5568;
     font-size: 0.95rem;
     font-weight: 600;
-    margin-bottom: 0.8rem;
+    margin-bottom: 0.5rem;
 }
 
 .social-icons {
     display: flex;
-    gap: 1rem;
-    justify-content: center;
+    gap: 0.8rem;
 }
 
 .social-icons a {
     color: #ffffff;
     background-color: var(--bg-blue);
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
     border-radius: 50%;
     display: inline-flex;
     align-items: center;
@@ -438,50 +441,39 @@ a {
 }
 
 /* Center Section: Copyright */
-.footer-copyright {
+.footer-center {
+    flex: 1;
+    text-align: center;
+    /* Centers the text perfectly */
     font-size: 0.85rem;
     color: #718096;
-    text-align: center;
 }
 
 /* Right Section: Address */
-.footer-address {
-    text-align: center;
+.footer-right {
+    flex: 1;
+    text-align: right;
+    /* Aligns text to the right edge */
     color: #4a5568;
     font-size: 0.95rem;
 }
 
-.footer-address p {
+.footer-right p {
     margin: 0 0 0.3rem 0;
 }
 
-/* Desktop Layout - Aligns left, center, right */
-@media (min-width: 992px) {
+/* Mobile Responsiveness (Stacks them on small screens) */
+@media (max-width: 768px) {
     .footer-bottom-bar {
-        flex-direction: row;
-        justify-content: space-between;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .footer-left,
+    .footer-center,
+    .footer-right {
         align-items: center;
-    }
-
-    .footer-social,
-    .footer-address {
-        flex: 1;
-    }
-
-    .footer-social {
-        text-align: left;
-    }
-
-    .social-icons {
-        justify-content: flex-start;
-    }
-
-    .footer-copyright {
-        flex: 1;
-    }
-
-    .footer-address {
-        text-align: right;
+        text-align: center;
     }
 }
 
