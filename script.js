@@ -10,7 +10,19 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Optional: Close the mobile menu when clicking outside of it
+    // Dropdown toggle on click
+    const dropdownToggles = document.querySelectorAll('.nav-item-dropdown > a');
+    dropdownToggles.forEach(toggle => {
+        toggle.addEventListener('click', (e) => {
+            e.preventDefault();
+            const menu = toggle.nextElementSibling;
+            if (menu && menu.classList.contains('dropdown-menu')) {
+                menu.classList.toggle('show');
+            }
+        });
+    });
+
+    // Optional: Close the mobile menu and dropdowns when clicking outside of it
     document.addEventListener('click', (event) => {
         const isClickInsideNav = navLinks.contains(event.target);
         const isClickOnToggle = navToggle.contains(event.target);
@@ -19,6 +31,14 @@ document.addEventListener('DOMContentLoaded', () => {
             navLinks.classList.remove('active');
             navToggle.classList.remove('active');
         }
+
+        // Close dropdowns
+        dropdownToggles.forEach(toggle => {
+            const menu = toggle.nextElementSibling;
+            if (menu && menu.classList.contains('show') && !toggle.contains(event.target) && !menu.contains(event.target)) {
+                menu.classList.remove('show');
+            }
+        });
     });
 });
 
