@@ -1080,3 +1080,59 @@ a {
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
     letter-spacing: 1px;
 }
+
+/* ==========================================================================
+   Careers Category Boxes
+   ========================================================================== */
+.category-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin: 1rem 0 3rem 0;
+}
+
+@media (min-width: 768px) {
+    .category-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.category-box {
+    background: #ffffff;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    color: var(--bg-blue);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+}
+
+.category-box:hover {
+    border-color: var(--accent-gold);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.category-box.active {
+    border-color: var(--accent-gold);
+    background-color: #f8fafc;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.category-box h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--bg-blue);
+}
+
+.category-box p {
+    color: #64748b;
+    font-size: 0.95rem;
+    margin: 0;
+}
