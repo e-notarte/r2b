@@ -56,17 +56,25 @@ a {
 }
 
 .nav-brand {
-    font-size: 1.8rem;
+    font-size: 1.2rem;
     font-weight: 700;
-    color: var(--accent-gold);
+    color: var(--header-blue);
     text-transform: uppercase;
     letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .nav-brand img {
     max-height: 35px;
     width: auto;
     display: block;
+}
+
+.brand-text {
+    font-size: 1.1rem;
+    color: var(--header-blue);
 }
 
 .nav-links {
