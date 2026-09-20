@@ -214,11 +214,11 @@ a {
 #about-hero .hero-content {
     position: relative;
     z-index: 2;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 #about-hero .hero-title {
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .hero-slider {
@@ -246,24 +246,63 @@ a {
     transform: translateZ(0);
 }
 
-.hero-slider .slide:nth-child(1) { -webkit-animation-delay: 0s; animation-delay: 0s; }
-.hero-slider .slide:nth-child(2) { -webkit-animation-delay: 5s; animation-delay: 5s; }
-.hero-slider .slide:nth-child(3) { -webkit-animation-delay: 10s; animation-delay: 10s; }
+.hero-slider .slide:nth-child(1) {
+    -webkit-animation-delay: 0s;
+    animation-delay: 0s;
+}
+
+.hero-slider .slide:nth-child(2) {
+    -webkit-animation-delay: 5s;
+    animation-delay: 5s;
+}
+
+.hero-slider .slide:nth-child(3) {
+    -webkit-animation-delay: 10s;
+    animation-delay: 10s;
+}
 
 @-webkit-keyframes slideFade {
-    0% { opacity: 0; }
-    5% { opacity: 1; }
-    33% { opacity: 1; }
-    38% { opacity: 0; }
-    100% { opacity: 0; }
+    0% {
+        opacity: 0;
+    }
+
+    5% {
+        opacity: 1;
+    }
+
+    33% {
+        opacity: 1;
+    }
+
+    38% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
 }
 
 @keyframes slideFade {
-    0% { opacity: 0; }
-    5% { opacity: 1; }
-    33% { opacity: 1; }
-    38% { opacity: 0; }
-    100% { opacity: 0; }
+    0% {
+        opacity: 0;
+    }
+
+    5% {
+        opacity: 1;
+    }
+
+    33% {
+        opacity: 1;
+    }
+
+    38% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
 }
 
 .hero-slider::after {
@@ -385,13 +424,19 @@ a {
 }
 
 .social-icons a {
-    color: #4a5568;
-    transition: color 0.3s ease, transform 0.3s ease;
+    color: #ffffff;
+    background-color: var(--bg-blue);
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
     display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .social-icons a:hover {
-    color: var(--accent-gold);
+    background-color: var(--accent-gold);
     transform: translateY(-3px);
 }
 
