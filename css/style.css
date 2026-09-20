@@ -120,6 +120,59 @@ a {
     color: var(--accent-gold-hover);
 }
 
+/* Dropdown Navigation */
+.nav-item-dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #ffffff;
+    min-width: 200px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    border-top: 3px solid var(--accent-gold);
+    list-style: none;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-item-dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-menu li {
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.dropdown-menu li:last-child {
+    border-bottom: none;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 12px 20px;
+    color: var(--bg-blue);
+    font-size: 0.85rem;
+}
+
+.dropdown-menu a::after {
+    display: none;
+}
+
+.dropdown-menu a:hover {
+    background: #f8f9fa;
+    color: var(--accent-gold);
+}
+
 /* Mobile Nav Toggle */
 .nav-toggle {
     display: none;
@@ -800,8 +853,32 @@ a {
     }
 
     .nav-toggle.active .hamburger::after {
-        top: 0;
-        transform: rotate(-45deg);
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    /* Mobile Dropdown Fix */
+    .nav-item-dropdown {
+        width: 100%;
+        text-align: center;
+    }
+
+    .dropdown-menu {
+        position: static;
+        box-shadow: none;
+        border-top: none;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        background: transparent;
+        margin-top: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .dropdown-menu li {
+        border-bottom: none;
     }
 
     /* Mobile Footer */
@@ -931,6 +1008,68 @@ a {
     font-size: clamp(2.5rem, 5vw, 4rem);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     margin-bottom: 0.5rem;
+}
+
+/* ==========================================================================
+   Leaders Section
+   ========================================================================== */
+.leaders-section {
+    padding: 5rem 0;
+    background-color: #f8f9fa;
+}
+
+.leaders-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    margin-top: 3rem;
+}
+
+@media (min-width: 768px) {
+    .leaders-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.leader-card {
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.leader-image {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    object-position: top;
+}
+
+.leader-info {
+    padding: 2rem;
+}
+
+.leader-name {
+    color: var(--bg-blue);
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.leader-title {
+    color: var(--accent-gold);
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.leader-bio {
+    color: #555;
+    line-height: 1.6;
 }
 
 #careers-hero .hero-subtitle {
