@@ -24,10 +24,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Optional: Close the mobile menu and dropdowns when clicking outside of it
     document.addEventListener('click', (event) => {
-        const isClickInsideNav = navLinks.contains(event.target);
-        const isClickOnToggle = navToggle.contains(event.target);
+        const isClickInsideNav = navLinks ? navLinks.contains(event.target) : false;
+        const isClickOnToggle = navToggle ? navToggle.contains(event.target) : false;
 
-        if (!isClickInsideNav && !isClickOnToggle && navLinks.classList.contains('active')) {
+        if (navLinks && navToggle && !isClickInsideNav && !isClickOnToggle && navLinks.classList.contains('active')) {
             navLinks.classList.remove('active');
             navToggle.classList.remove('active');
         }
