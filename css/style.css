@@ -58,23 +58,27 @@ a {
 .nav-brand {
     font-size: 1.2rem;
     font-weight: 700;
-    color: var(--header-blue);
     text-transform: uppercase;
     letter-spacing: 1px;
-    display: flex;
-    align-items: center;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    flex-wrap: nowrap !important;
     gap: 10px;
+    text-decoration: none;
 }
 
 .nav-brand img {
     max-height: 35px;
     width: auto;
     display: block;
+    flex-shrink: 0;
 }
 
 .brand-text {
     font-size: 1.1rem;
-    color: var(--header-blue);
+    color: #1a4a84; /* Distinct corporate blue */
+    white-space: nowrap;
 }
 
 .nav-links {
