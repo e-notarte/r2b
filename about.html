@@ -17,6 +17,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
 
+    <!-- Font Awesome for ISO Certification and Social Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <!-- CSS Link -->
     <link rel="stylesheet" href="css/style.css">
 
@@ -57,12 +60,9 @@
 
     <!-- About Hero Section (Video Template) -->
     <header class="page-hero" id="about-hero">
-
         <!-- Video Background Container -->
         <div class="video-container">
-            <!-- Autoplay, loop, and muted are standard for background videos -->
             <video autoplay loop muted playsinline id="hero-video">
-                <!-- Replace 'your-video.mp4' with your actual video file path later -->
                 <source src="https://pub-7480e3de787c46bc820e8f515126787b.r2.dev/Video%20Clips/Video%201.mp4"
                     type="video/mp4">
             </video>
@@ -75,7 +75,6 @@
             <h1 class="hero-title" style="text-transform: capitalize;">Building better lives<br>for Over 30 Years</h1>
             <h3 class="hero-subtitle">Quadruple A Construction Conglomerate</h3>
         </div>
-
     </header>
 
     <!-- About Content Section -->
@@ -167,35 +166,31 @@
         </div>
     </section>
 
-
-    <!-- Footer -->
+    <!-- Footer (Updated to match your Left/Center/Right layout) -->
     <footer class="simple-footer">
-        <div class="footer-content">
-            <div class="footer-section">
-                <h4>Find us on</h4>
+        <div class="footer-bottom-bar">
+
+            <!-- LEFT: Social Links -->
+            <div class="footer-left">
+                <span class="social-text">Find us on</span>
                 <div class="social-icons">
-                    <a href="https://facebook.com" aria-label="Facebook">
-                        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2"
-                            fill="none" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-                        </svg>
-                    </a>
-                    <a href="https://instagram.com" aria-label="Instagram">
-                        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2"
-                            fill="none" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                        </svg>
-                    </a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
-            <div class="footer-section">
+
+            <!-- CENTER: Copyright -->
+            <div class="footer-center">
+                &copy; 2026 R-II Builders, Inc. All rights reserved.
+            </div>
+
+            <!-- RIGHT: Address -->
+            <div class="footer-right">
                 <p>#136 R-II Building Malakas Street, Quezon City 11</p>
                 <p>+63 (2) 00000</p>
             </div>
+
         </div>
-        <p class="footer-text">&copy; 2026 R-II Builders, Inc. All rights reserved.</p>
     </footer>
 
     <script src="script.js"></script>
